@@ -1,0 +1,35 @@
+The Election Algorithm is an iterative population based algorithm, which works with a set of solutions known as population. Each individual of the population is called a person and can be either
+a candidate or a voter. A candidate will be a person whose fitness is greater than the average fitness of the population. Initially each member of the population is supporting a candidate close to his
+fitness.
+As per the paper, only 5-10% of the population can candidates.
+Advertising campaign is the core of this algorithm. Advertisements hopefully cause the persons to converge to a state of solution space that is the global optimum.
+
+Algorithm: 
+
+BEGIN
+  Generate initial population;
+  Compute eligibility of each individual;
+  Create parties initial candidates and their supporters
+  REPEAT//* advertising campaign (ad days) *//
+    For candidates size do
+      // advertisement
+      Candidates advertise their plans and improve their stance by learning new ideas;
+      //coalition;
+      The weakest party join another party
+    END FOR
+  UNTIL the number of iterations is reached
+END
+
+
+Implementation Description: 
+
+Population is represented in an array list of Population class that has the following attributes: 
+public class Population {
+private Data data;
+private boolean isCandidate;
+private double fitness;
+private int politicalParty;
+}
+Political parties are hashmaps: Key of this hashmap is the candidate id, the value is an array list of type Population that represents the supporter of this party 
+
+More details about the implementation can be checked in the EA.java class
