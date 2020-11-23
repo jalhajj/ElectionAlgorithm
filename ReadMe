@@ -20,6 +20,7 @@ BEGIN
   UNTIL the number of iterations is reached
 END
 
+More details about the algorithm, can be found in the file metaheuristic.pdf
 
 Implementation Description: 
 
